@@ -1,0 +1,31 @@
+name: 'PRY #2 Funda'
+source code: "\r\ninput: 'xoooxooxx'\r\nblank: ' '\r\nstart state: line\r\ntable:\r\n\r\n  line:\r\n    o: {R: lineo}\r\n    x: {R: linex}\r\n    ' ': {L: begin}\r\n  begin:\r\n    o: {L: begin}\r\n    x: {L: begin}\r\n    ' ': {R: diagon}\r\n  \r\n  linex:\r\n    o: { R: pass}\r\n    x: { R: linx}\r\n    \r\n  linx:\r\n    x: { R: jug1win}\r\n    o: { R: line }\r\n  \r\n  lineo:\r\n    x: { R: pass}\r\n    o: { R: lino}\r\n    \r\n  lino:\r\n    o: { R: jug2win}\r\n    x: { R: line }\r\n    \r\n  pass:\r\n    o: {R: line}\r\n    x: {R: line}\r\n    \r\n  diagon:\r\n    x: {R: passx}\r\n    o: {R: passo}\r\n  \r\n  passx:\r\n    x: {R: passx2}\r\n    o: {R: passx2}\r\n  \r\n  passx2:\r\n    x: {R: passxaux}\r\n    o: {R: passxaux}\r\n  \r\n  passxaux:\r\n    x: {R: diagonx}\r\n    o: {R: diagonx}\r\n  \r\n  diagonx:\r\n    x: {R: passx3}\r\n    o: {R: beggins}\r\n  \r\n  passx3:\r\n    x: {R: passx4}\r\n    o: {R: passx4}\r\n  \r\n  passx4:\r\n    x: {R: passxaux2}\r\n    o: {R: passxaux2}\r\n  \r\n  passxaux2:\r\n    x: {R: diax}\r\n    o: {R: diax}\r\n  \r\n  diax:\r\n    x: {R: jug1win}\r\n  \r\n  passo:\r\n    x: {R: passo2}\r\n    o: {R: passo2}\r\n  \r\n  passo2:\r\n    x: {R: passoaux}\r\n    o: {R: passoaux}\r\n  \r\n  passoaux:\r\n    x: {R: diagono}\r\n    o: {R: diagono}\r\n  \r\n  diagono:\r\n    x: {R: passo3}\r\n    o: {R: beggins}\r\n  \r\n  passo3:\r\n    x: {R: passo4}\r\n    o: {R: passo4}\r\n  \r\n  passo4:\r\n    x: {R: passoaux2}\r\n    o: {R: passoaux2}\r\n  \r\n  passoaux2:\r\n    x: {R: diao}\r\n    o: {R: diao}\r\n  \r\n  \r\n  diao:\r\n    x: {R: jug2win}\r\n  \r\n  beggins:\r\n    x: L\r\n    o: L\r\n    ' ': {R: done}\r\n  \r\n  done:\r\n  \r\n  jug1win:\r\n  \r\n  jug2win:"
+positions:
+  line: {x: 627.68, y: 480, fixed: false}
+  begin: {x: 590.98, y: 328.84, fixed: false}
+  linex: {x: 767.03, y: 480, fixed: false}
+  linx: {x: 733.36, y: 354.89, fixed: false}
+  lineo: {x: 511.16, y: 480, fixed: false}
+  lino: {x: 488.18, y: 370.44, fixed: false}
+  pass: {x: 653.42, y: 372.99, fixed: false}
+  diagon: {x: 565.5, y: 174.46, fixed: false}
+  passx: {x: 524.09, y: 26.17, fixed: false}
+  passx2: {x: 370.28, y: 20, fixed: false}
+  passxaux: {x: 215, y: 20, fixed: false}
+  diagonx: {x: 222.98, y: 164.14, fixed: false}
+  passx3: {x: 301.27, y: 29.74, fixed: false}
+  passx4: {x: 458.18, y: 20, fixed: false}
+  passxaux2: {x: 618.38, y: 20, fixed: false}
+  diax: {x: 761.76, y: 58.25, fixed: false}
+  passo: {x: 503.07, y: 302.35, fixed: false}
+  passo2: {x: 421.99, y: 434.81, fixed: false}
+  passoaux: {x: 294.6, y: 480, fixed: false}
+  diagono: {x: 158.68, y: 475.89, fixed: false}
+  passo3: {x: 20, y: 447.53, fixed: false}
+  passo4: {x: 20, y: 290.43, fixed: false}
+  passoaux2: {x: 43.68, y: 145.08, fixed: false}
+  diao: {x: 180.94, y: 220.58, fixed: false}
+  beggins: {x: 183.56, y: 323.68, fixed: false}
+  done: {x: 50.01, y: 375.41, fixed: false}
+  jug1win: {x: 780, y: 207.96, fixed: false}
+  jug2win: {x: 335.31, y: 292.97, fixed: false}
