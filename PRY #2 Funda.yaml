@@ -1,43 +1,88 @@
 name: 'PRY #2 Funda'
-source code: "\r\ninput: 'xoooxooxo'\r\nblank: ' '\r\nstart state: line\r\ntable:\r\n\r\n  line:\r\n    o: {R: lineo}\r\n    x: {R: linex}\r\n    ' ': {L: begin}\r\n  begin:\r\n    o: {L: begin}\r\n    x: {L: begin}\r\n    ' ': {R: diagon}\r\n  \r\n  linex:\r\n    o: { R: pass}\r\n    x: { R: linx}\r\n    \r\n  linx:\r\n    x: { R: jug1win}\r\n    o: { R: line }\r\n  \r\n  lineo:\r\n    x: { R: pass}\r\n    o: { R: lino}\r\n    \r\n  lino:\r\n    o: { R: jug2win}\r\n    x: { R: line }\r\n    \r\n  pass:\r\n    o: {R: line}\r\n    x: {R: line}\r\n    \r\n  diagon:\r\n    x: {R: passx}\r\n    o: {R: passo}\r\n  \r\n  passx:\r\n    x: {R: passx2}\r\n    o: {R: passx2}\r\n  \r\n  passx2:\r\n    x: {R: passxaux}\r\n    o: {R: passxaux}\r\n  \r\n  passxaux:\r\n    x: {R: diagonx}\r\n    o: {R: diagonx}\r\n  \r\n  diagonx:\r\n    x: {R: passx3}\r\n    o: {R: beggins}\r\n  \r\n  passx3:\r\n    x: {R: passx4}\r\n    o: {R: passx4}\r\n  \r\n  passx4:\r\n    x: {R: passxaux2}\r\n    o: {R: passxaux2}\r\n  \r\n  passxaux2:\r\n    x: {R: diax}\r\n    o: {R: diax}\r\n  \r\n  diax:\r\n    x: {R: jug1win}\r\n    o: {L: beggins}\r\n  \r\n  passo:\r\n    x: {R: passo2}\r\n    o: {R: passo2}\r\n  \r\n  passo2:\r\n    x: {R: passoaux}\r\n    o: {R: passoaux}\r\n  \r\n  passoaux:\r\n    x: {R: diagono}\r\n    o: {R: diagono}\r\n  \r\n  diagono:\r\n    o: {R: passo3}\r\n    x: {R: beggins}\r\n  \r\n  passo3:\r\n    x: {R: passo4}\r\n    o: {R: passo4}\r\n  \r\n  passo4:\r\n    x: {R: passoaux2}\r\n    o: {R: passoaux2}\r\n  \r\n  passoaux2:\r\n    x: {R: diao}\r\n    o: {R: diao}\r\n  \r\n  \r\n  diao:\r\n    o: {R: jug2win}\r\n    x: {L: beggins}\r\n    \r\n    \r\n  beggins:\r\n    x: L\r\n    o: L\r\n    ' ': {R: passtwo}\r\n\r\n  passtwo:\r\n    x: {R: passtwo2}\r\n    o: {R: passtwo2}\r\n  \r\n  passtwo2:\r\n    x: {R: secondia}\r\n    o: {R: secondia}\r\n  \r\n  secondia:\r\n    x: {R: sndpassx}\r\n    o: {R: sndpasso}\r\n  \r\n  sndpassx:\r\n    x: {R: secondiax}\r\n    o: {R: secondiax}\r\n  \r\n  secondiax:\r\n    x: {R: sndpassx2}\r\n    o: {R: beggins2}\r\n  \r\n  sndpassx2:\r\n    x: {R: secdiax}\r\n    o: {R: secdiax}\r\n    \r\n  secdiax:\r\n    x: {R: jug1win}\r\n    o: {R: beggins2}\r\n  \r\n  sndpasso:\r\n    x: {R: secondiao}\r\n    o: {R: secondiao}\r\n  \r\n  secondiao:\r\n    o: {R: sndpasso2}\r\n    x: {R: beggins2}\r\n  \r\n  sndpasso2:\r\n    x: {R: secdiao}\r\n    o: {R: secdiao}\r\n    \r\n  secdiao:\r\n    o: {R: jug2win}\r\n    x: {R: beggins2}  \r\n  \r\n  beggins2:\r\n    x: L\r\n    o: L\r\n    ' ': {R: done}\r\n    \r\n    \r\n  \r\n  done:\r\n  \r\n  jug1win:\r\n  \r\n  jug2win:"
+source code: "\r\ninput: 'xoooxoxxo'\r\nblank: ' '\r\nstart state: line\r\ntable:\r\n\r\n  line:\r\n    o: {R: lineo}\r\n    x: {R: linex}\r\n    ' ': {L: begin}\r\n    \r\n  begin:\r\n    o: {L: begin}\r\n    x: {L: begin}\r\n    ' ': {R: diagon}\r\n  \r\n  linex:\r\n    o: { R: pass}\r\n    x: { R: linx}\r\n    \r\n  linx:\r\n    x: { R: jug1win}\r\n    o: { R: line }\r\n  \r\n  lineo:\r\n    x: { R: pass}\r\n    o: { R: lino}\r\n    \r\n  lino:\r\n    o: { R: jug2win}\r\n    x: { R: line }\r\n    \r\n  pass:\r\n    o: {R: line}\r\n    x: {R: line}\r\n    \r\n  diagon:\r\n    x: {R: passx}\r\n    o: {R: passo}\r\n  \r\n  passx:\r\n    x: {R: passx2}\r\n    o: {R: passx2}\r\n  \r\n  passx2:\r\n    x: {R: passxaux}\r\n    o: {R: passxaux}\r\n  \r\n  passxaux:\r\n    x: {R: diagonx}\r\n    o: {R: diagonx}\r\n  \r\n  diagonx:\r\n    x: {R: passx3}\r\n    o: {R: beggins}\r\n  \r\n  passx3:\r\n    x: {R: passx4}\r\n    o: {R: passx4}\r\n  \r\n  passx4:\r\n    x: {R: passxaux2}\r\n    o: {R: passxaux2}\r\n  \r\n  passxaux2:\r\n    x: {R: diax}\r\n    o: {R: diax}\r\n  \r\n  diax:\r\n    x: {R: jug1win}\r\n    o: {L: beggins}\r\n  \r\n  passo:\r\n    x: {R: passo2}\r\n    o: {R: passo2}\r\n  \r\n  passo2:\r\n    x: {R: passoaux}\r\n    o: {R: passoaux}\r\n  \r\n  passoaux:\r\n    x: {R: diagono}\r\n    o: {R: diagono}\r\n  \r\n  diagono:\r\n    o: {R: passo3}\r\n    x: {R: beggins}\r\n  \r\n  passo3:\r\n    x: {R: passo4}\r\n    o: {R: passo4}\r\n  \r\n  passo4:\r\n    x: {R: passoaux2}\r\n    o: {R: passoaux2}\r\n  \r\n  passoaux2:\r\n    x: {R: diao}\r\n    o: {R: diao}\r\n  \r\n  diao:\r\n    o: {R: jug2win}\r\n    x: {L: beggins}\r\n    \r\n  beggins:\r\n    x: L\r\n    o: L\r\n    ' ': {R: passtwo}\r\n\r\n  passtwo:\r\n    x: {R: passtwo2}\r\n    o: {R: passtwo2}\r\n  \r\n  passtwo2:\r\n    x: {R: secondia}\r\n    o: {R: secondia}\r\n  \r\n  secondia:\r\n    x: {R: sndpassx}\r\n    o: {R: sndpasso}\r\n  \r\n  sndpassx:\r\n    x: {R: secondiax}\r\n    o: {R: secondiax}\r\n  \r\n  secondiax:\r\n    x: {R: sndpassx2}\r\n    o: {R: beggins2}\r\n  \r\n  sndpassx2:\r\n    x: {R: secdiax}\r\n    o: {R: secdiax}\r\n    \r\n  secdiax:\r\n    x: {R: jug1win}\r\n    o: {R: beggins2}\r\n  \r\n  sndpasso:\r\n    x: {R: secondiao}\r\n    o: {R: secondiao}\r\n  \r\n  secondiao:\r\n    o: {R: sndpasso2}\r\n    x: {R: beggins2}\r\n  \r\n  sndpasso2:\r\n    x: {R: secdiao}\r\n    o: {R: secdiao}\r\n    \r\n  secdiao:\r\n    o: {R: jug2win}\r\n    x: {R: beggins2}  \r\n  \r\n  beggins2:\r\n    x: L\r\n    o: L\r\n    ' ': {R: column1}\r\n    \r\n  column1:\r\n    x: {R: columnpassx}\r\n    o: {R: columnpasso}\r\n  \r\n  columnpassx:\r\n    x: {R: columnpassx2}\r\n    o: {R: columnpassx2}\r\n  \r\n  columnpasso:\r\n    x: {R: columnpasso2}\r\n    o: {R: columnpasso2}\r\n  \r\n  columnpassx2:\r\n    x: {R: column1x}\r\n    o: {R: column1x}\r\n  \r\n  columnpasso2:\r\n    x: {R: column1o}\r\n    o: {R: column1o}\r\n    \r\n  column1x:\r\n    x: {R: columnpassx3}\r\n    o: {R: beggins3}\r\n  \r\n  column1o: \r\n    x: {R: beggins3}\r\n    o: {R: columnpasso3}\r\n  \r\n  columnpassx3:\r\n    x: {R: columnpassx4}\r\n    o: {R: columnpassx4}\r\n  \r\n  columnpasso3:\r\n    x: {R: columnpasso4}\r\n    o: {R: columnpasso4}\r\n  \r\n  columnpassx4:\r\n    x: {R: col1x}\r\n    o: {R: col1x}\r\n  \r\n  columnpasso4:\r\n    x: {R: col1o}\r\n    o: {R: col1o}\r\n  \r\n  col1x:\r\n    x: {R: jug1win}\r\n    o: {R: beggins3}\r\n    \r\n  col1o:\r\n    x: {R: beggins3}\r\n    o: {R: jug2win}\r\n  \r\n  beggins3:\r\n    x: L\r\n    o: L\r\n    ' ': {R: passcol2}\r\n  \r\n  passcol2:\r\n    x: {R: column2}\r\n    o: {R: column2}\r\n  \r\n  column2:\r\n    x: {R: col2passx}\r\n    o: {R: col2passo}\r\n  \r\n  col2passx:\r\n    x: {R: col2passx2}\r\n    o: {R: col2passx2}\r\n  \r\n  col2passo:\r\n    x: {R: col2passo2}\r\n    o: {R: col2passo2}\r\n    \r\n  col2passx2:\r\n    x: {R: column2x}\r\n    o: {R: column2x}\r\n  \r\n  col2passo2:\r\n    x: {R: column2o}\r\n    o: {R: column2o}\r\n  \r\n  column2x:\r\n    x: {R: col2passx3}\r\n    o: {R: beggins4}\r\n  \r\n  column2o:\r\n    x: {R: beggins4}\r\n    o: {R: col2passo3}\r\n    \r\n  col2passx3:\r\n    x: {R: col2passx4}\r\n    o: {R: col2passx4}\r\n  \r\n  col2passo3:\r\n    x: {R: col2passo4}\r\n    o: {R: col2passo4}\r\n  \r\n  col2passx4:\r\n    x: {R: col2x}\r\n    o: {R: col2x}\r\n  \r\n  col2passo4:\r\n    x: {R: col2o}\r\n    o: {R: col2o}\r\n  \r\n  col2x:\r\n    x: {R: jug1win}\r\n    o: {R: beggins4}\r\n  \r\n  col2o:\r\n    x: {R: beggins4}\r\n    o: {R: jug2win}\r\n  \r\n  beggins4:\r\n    x: L\r\n    o: L\r\n    ' ': {R: col3pass}\r\n  \r\n  col3pass:\r\n    x: {R: col3passaux}\r\n    o: {R: col3passaux}\r\n  \r\n  col3passaux:\r\n    x: {R: column3}\r\n    o: {R: column3}\r\n  \r\n  column3:\r\n    x: {R: col3passx}\r\n    o: {R: col3passo}\r\n    \r\n  col3passx:\r\n    x: {R: col3passx2}\r\n    o: {R: col3passx2}\r\n  \r\n  col3passo:\r\n    x: {R: col3passo2}\r\n    o: {R: col3passo2}\r\n  \r\n  col3passx2:\r\n    x: {R: column3x}\r\n    o: {R: column3x}\r\n  \r\n  col3passo2:\r\n    x: {R: column3o}\r\n    o: {R: column3o}\r\n  \r\n  column3x:\r\n    x: {R: col3passx3}\r\n    o: {R: beggins5}\r\n  \r\n  column3o:\r\n    x: {R: beggins5}\r\n    o: {R: col3passo3}\r\n  \r\n  col3passx3:\r\n    x: {R: col3passx4}\r\n    o: {R: col3passx4}\r\n  \r\n  col3passo3:\r\n    x: {R: col3passo4}\r\n    o: {R: col3passo4}\r\n  \r\n  col3passx4:\r\n    x: {R: col3x}\r\n    o: {R: col3x}\r\n  \r\n  col3passo4:\r\n    x: {R: col3o}\r\n    o: {R: col3o}\r\n  \r\n  col3x:\r\n    x: {R: jug1win}\r\n    o: {R: empate}\r\n  \r\n  col3o:\r\n    x: {R: empate}\r\n    o: {R: jug2win}\r\n  \r\n  beggins5:\r\n    x: L\r\n    o: L\r\n    ' ': {R: empate}\r\n  \r\n  jug1win:\r\n  \r\n  jug2win:\r\n  \r\n  empate:\r\n  "
 positions:
-  line: {x: 780, y: 312.01, fixed: false}
-  begin: {x: 780, y: 134.44, fixed: false}
-  linex: {x: 780, y: 198.65, fixed: false}
-  linx: {x: 651.38, y: 250.73, fixed: false}
-  lineo: {x: 780, y: 480, fixed: false}
-  lino: {x: 691.31, y: 439.42, fixed: false}
-  pass: {x: 699.8, y: 364.94, fixed: false}
-  diagon: {x: 660.26, y: 20, fixed: false}
-  passx: {x: 448.48, y: 20, fixed: false}
+  line: {x: 780, y: 109.83, fixed: false}
+  begin: {x: 780, y: 20, fixed: false}
+  linex: {x: 780, y: 27.91, fixed: false}
+  linx: {x: 662.76, y: 20, fixed: false}
+  lineo: {x: 780, y: 364.5, fixed: false}
+  lino: {x: 721.6, y: 252.45, fixed: false}
+  pass: {x: 780, y: 221.88, fixed: false}
+  diagon: {x: 622.15, y: 20, fixed: false}
+  passx: {x: 401.09, y: 20, fixed: false}
   passx2: {x: 227.69, y: 122.81}
-  passxaux: {x: 81.37, y: 20, fixed: false}
-  diagonx: {x: 124.21, y: 122.06, fixed: false}
+  passxaux: {x: 102.05, y: 122.81}
+  diagonx: {x: 133.45, y: 40.84}
   passx3: {x: 20, y: 20, fixed: false}
-  passx4: {x: 179.09, y: 20, fixed: false}
+  passx4: {x: 165.11, y: 20, fixed: false}
   passxaux2: {x: 351.76, y: 20}
   diax: {x: 460.83, y: 113.44}
-  passo: {x: 532.2, y: 20, fixed: false}
-  passo2: {x: 612.97, y: 118.65}
-  passoaux: {x: 382.86, y: 107.03, fixed: false}
-  diagono: {x: 180.73, y: 175.81, fixed: false}
-  passo3: {x: 20, y: 231.02, fixed: false}
-  passo4: {x: 20, y: 381.33, fixed: false}
-  passoaux2: {x: 149.68, y: 336.11, fixed: false}
+  passo: {x: 528.41, y: 20, fixed: false}
+  passo2: {x: 676.88, y: 120.04}
+  passoaux: {x: 403.83, y: 65.91, fixed: false}
+  diagono: {x: 166.22, y: 115.87}
+  passo3: {x: 75.57, y: 80.65}
+  passo4: {x: 20, y: 32.42, fixed: false}
+  passoaux2: {x: 102.54, y: 189.12, fixed: false}
   diao: {x: 304, y: 274.45}
-  beggins: {x: 284.87, y: 86.11, fixed: false}
+  beggins: {x: 291.18, y: 26.86, fixed: false}
   passtwo: {x: 391.64, y: 170.05}
-  passtwo2: {x: 551.63, y: 215.77, fixed: false}
-  secondia: {x: 590.55, y: 366.3, fixed: false}
-  sndpassx: {x: 433.9, y: 414.29, fixed: false}
-  secondiax: {x: 275, y: 370.95, fixed: false}
+  passtwo2: {x: 601.2, y: 279.04, fixed: false}
+  secondia: {x: 739.14, y: 423.57, fixed: false}
+  sndpassx: {x: 629.44, y: 480, fixed: false}
+  secondiax: {x: 503.31, y: 380.75, fixed: false}
   sndpassx2: {x: 374.67, y: 238.54}
-  secdiax: {x: 334.12, y: 388.56, fixed: false}
-  sndpasso: {x: 517.92, y: 480, fixed: false}
-  secondiao: {x: 361.31, y: 480, fixed: false}
-  sndpasso2: {x: 483.73, y: 480, fixed: false}
-  secdiao: {x: 341.99, y: 480, fixed: false}
-  beggins2: {x: 196.94, y: 480, fixed: false}
-  done: {x: 45.08, y: 480, fixed: false}
-  jug1win: {x: 483.23, y: 279.44, fixed: false}
-  jug2win: {x: 555.38, y: 458.75}
+  secdiax: {x: 486.12, y: 64, fixed: false}
+  sndpasso: {x: 581.51, y: 327.17}
+  secondiao: {x: 523.01, y: 437.83, fixed: false}
+  sndpasso2: {x: 389.83, y: 463.33}
+  secdiao: {x: 425.78, y: 385.52}
+  beggins2: {x: 475.74, y: 224.36}
+  column1: {x: 260.9, y: 248.67, fixed: false}
+  columnpassx: {x: 72.17, y: 320.8, fixed: false}
+  columnpasso: {x: 233, y: 423.04}
+  columnpassx2: {x: 20, y: 480, fixed: false}
+  columnpasso2: {x: 327.88, y: 435.54}
+  column1x: {x: 157.24, y: 480, fixed: false}
+  column1o: {x: 258.46, y: 478.61}
+  columnpassx3: {x: 54.65, y: 480, fixed: false}
+  columnpasso3: {x: 157.86, y: 424.43}
+  columnpassx4: {x: 265.68, y: 358.83}
+  columnpasso4: {x: 233.29, y: 307.72}
+  col1x: {x: 429.6, y: 282.21, fixed: false}
+  col1o: {x: 463.26, y: 443.38}
+  beggins3: {x: 331.55, y: 385.52}
+  passcol2: {x: 513.9, y: 294.2, fixed: false}
+  column2: {x: 688.82, y: 171.28, fixed: false}
+  col2passx: {x: 780, y: 304.98, fixed: false}
+  col2passo: {x: 753.03, y: 20, fixed: false}
+  col2passx2: {x: 780, y: 467.63, fixed: false}
+  col2passo2: {x: 780, y: 164.88, fixed: false}
+  column2x: {x: 780, y: 334.06, fixed: false}
+  column2o: {x: 780, y: 349.95, fixed: false}
+  col2passx3: {x: 780, y: 201.28, fixed: false}
+  col2passo3: {x: 752.19, y: 480, fixed: false}
+  col2passx4: {x: 780, y: 122.27, fixed: false}
+  col2passo4: {x: 585.68, y: 480, fixed: false}
+  col2x: {x: 719.63, y: 307.31, fixed: false}
+  col2o: {x: 696.01, y: 480, fixed: false}
+  beggins4: {x: 780, y: 480, fixed: false}
+  col3pass: {x: 780, y: 272.13, fixed: false}
+  col3passaux: {x: 625.32, y: 73.23, fixed: false}
+  column3: {x: 419.33, y: 20, fixed: false}
+  col3passx: {x: 229.46, y: 20, fixed: false}
+  col3passo: {x: 193.37, y: 58.08, fixed: false}
+  col3passx2: {x: 47.14, y: 20, fixed: false}
+  col3passo2: {x: 20, y: 245.71, fixed: false}
+  column3x: {x: 20, y: 187.29, fixed: false}
+  column3o: {x: 20, y: 461.89, fixed: false}
+  col3passx3: {x: 20, y: 392, fixed: false}
+  col3passo3: {x: 20, y: 365.04, fixed: false}
+  col3passx4: {x: 179.49, y: 466.35, fixed: false}
+  col3passo4: {x: 202.71, y: 480, fixed: false}
+  col3x: {x: 367.99, y: 329.18, fixed: false}
+  col3o: {x: 406.14, y: 480, fixed: false}
+  beggins5: {x: 20, y: 326.14, fixed: false}
+  jug1win: {x: 566.67, y: 189.07, fixed: false}
+  jug2win: {x: 616.51, y: 399.01}
+  empate: {x: 196.4, y: 401.9, fixed: false}
